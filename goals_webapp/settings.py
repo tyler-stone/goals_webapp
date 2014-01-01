@@ -1,0 +1,1 @@
+import goals_webapp.settings
