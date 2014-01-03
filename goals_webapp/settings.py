@@ -1,1 +1,1 @@
-import goals_webapp.settings
+import settings

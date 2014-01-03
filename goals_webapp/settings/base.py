@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -46,6 +45,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
+    'goals_mgmt',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -65,7 +65,10 @@ WSGI_APPLICATION = 'goals_webapp.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'goals_webapp',
+    }
 }
 
 # Internationalization
