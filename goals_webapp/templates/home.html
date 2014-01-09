@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Home | GoalPro</title>
+<title>Home | O-Goals</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <style>
 body{
@@ -12,6 +12,48 @@ body{
 </head>
 
 <body>
-	<h1>{{ user }}</h1>
+	<header>
+		<h1>{{ user }}</h1>
+		<span><a href="/logout/">logout</a></span>
+	</header>
+
+	{% if num_inbox_goals > 0 %}
+		<div id="inbox">
+			<h2>Inbox</h2>
+			<h3>{{ num_inbox_goals }}</h3>
+			{% for x in inbox_goals %}
+				<div class="inbox_goal">
+				<div class="goal_flag"></div>
+				<span>{{ x.title }}</span>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if num_overdue_goals > 0 %}
+		<div id="overdue">
+			<h2>Overdue</h2>
+			<h3>{{ num_overdue_goals }}</h3>
+			{% for x in overdue_goals %}
+				<div class="inbox_goal">
+				<div class="goal_flag"></div>
+				<span>{{ x.title }}</span>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if num_today_goals > 0 %}
+		<div id="today">
+			<h2>Today</h2>
+			<h3>{{ num_today_goals }}</h3>
+			{% for x in today_goals %}
+				<div class="inbox_goal">
+				<div class="goal_flag"></div>
+				<span>{{ x.title }}</span>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
 </body>
 </html>
