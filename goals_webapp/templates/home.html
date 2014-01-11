@@ -3,12 +3,8 @@
 <head>
 <title>Home | O-Goals</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<style>
-body{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size: 12px;
-}
-</style>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
 </head>
 
 <body>
@@ -17,40 +13,53 @@ body{
 		<span><a href="/logout/">logout</a></span>
 	</header>
 
+	<div id="make_new" class="goal_section">
+		<div class="goal no_progressbar">
+		<div class="goal_flag make_new"></div>
+		<span><i>New Goal...</i></span>
+		</div>
+	</div>
+
 	{% if num_inbox_goals > 0 %}
-		<div id="inbox">
+		<div id="inbox" class="goal_section">
 			<h2>Inbox</h2>
-			<h3>{{ num_inbox_goals }}</h3>
+			<h3>({{ num_inbox_goals }})</h3>
 			{% for x in inbox_goals %}
-				<div class="inbox_goal">
-				<div class="goal_flag"></div>
+				<div class="goal">
+				<div class="progressbar"><div class="inbox"></div></div>
+				<div class="goal_flag inbox"></div>
 				<span>{{ x.title }}</span>
+				<div class="progressbar"><div class="inbox"></div></div>
 				</div>
 			{% endfor %}
 		</div>
 	{% endif %}
 
 	{% if num_overdue_goals > 0 %}
-		<div id="overdue">
+		<div id="overdue" class="goal_section">
 			<h2>Overdue</h2>
-			<h3>{{ num_overdue_goals }}</h3>
+			<h3>({{ num_overdue_goals }})</h3>
 			{% for x in overdue_goals %}
-				<div class="inbox_goal">
-				<div class="goal_flag"></div>
+				<div class="goal">
+				<div class="progressbar"><div class="overdue"></div></div>
+				<div class="goal_flag overdue"></div>
 				<span>{{ x.title }}</span>
+				<div class="progressbar"><div class="overdue"></div></div>
 				</div>
 			{% endfor %}
 		</div>
 	{% endif %}
 
 	{% if num_today_goals > 0 %}
-		<div id="today">
+		<div id="today" class="goal_section">
 			<h2>Today</h2>
-			<h3>{{ num_today_goals }}</h3>
+			<h3>({{ num_today_goals }})</h3>
 			{% for x in today_goals %}
-				<div class="inbox_goal">
-				<div class="goal_flag"></div>
+				<div class="goal">
+				<div class="goal_flag today"></div>
+				<div class="progressbar"><div class="today"></div></div>
 				<span>{{ x.title }}</span>
+				<div class="progressbar"><div class="today"></div></div>
 				</div>
 			{% endfor %}
 		</div>

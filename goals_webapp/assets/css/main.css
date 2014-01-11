@@ -1,0 +1,122 @@
+/* need css reset */
+
+html {
+	background-color: #aaa;
+	font-family: arial, serif;
+}
+
+body {
+	width: 960px;
+	margin: 0 auto;
+	background-color: #f8f8f8;
+	border: 3px solid #777;
+	padding: 5px;
+}
+
+h1 {
+	margin: 0;
+	margin-bottom: 20px;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+
+header a {
+	color: grey;
+}
+
+header span {
+	font-size: 12px;
+	margin-left: 6px;
+}
+
+h2 {
+	display: inline-block;
+	margin-top:15px;
+	margin-bottom: 5px;
+}
+
+h3 {
+	display: inline-block;
+	font-size: 12px;
+	margin: 0;
+	margin-left: 5px;
+}
+
+#make_new {
+	color: #ccc;
+}
+
+#inbox {
+	color: #4cc;
+}
+
+#overdue {
+	color: #cc0000;
+}
+
+#today {
+	color: #333;
+}
+
+.goal_section {
+	margin: 10px 20px;
+}
+
+.goal {
+	background-color: #f8f8f8;
+	/* border: 1px solid #ddd; */
+	/*height: 32px;*/
+	/* border-radius: 2px; */
+	border-right: 1px solid #ddd;
+	margin-bottom: 5px;
+}
+
+.goal_flag {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+.make_new {
+	background-color: #ccc;
+}
+
+.inbox {
+	background-color: #4cc;
+}
+
+.overdue {
+	background-color: #cc0000;
+}
+
+.today {
+	background-color: #333;
+}
+
+.goal span {
+	line-height: 30px;
+	height: 30px;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.progressbar {
+	background-color: #ddd;
+}
+
+.progressbar > div {
+	width: 40%;
+	height: 1px;
+}
+
+.no_progressbar {
+	border: 1px solid #ddd;
+}
