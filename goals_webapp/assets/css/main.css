@@ -46,6 +46,12 @@ h3 {
 	margin-left: 5px;
 }
 
+p {
+	margin: 0;
+	font-size: 12px;
+	color: #333;
+}
+
 #make_new {
 	color: #ccc;
 }
@@ -76,9 +82,18 @@ h3 {
 
 .goal_minview {
 	border-right: 1px solid #ddd;
+	background: #ffffff;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
 }
 
 .goal_detailview {
+	background-color: #fefefe;
 	border-left: 30px solid #ddd;
 	border-right: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
@@ -181,4 +196,41 @@ h3 {
 .goal_flag.subgoal_status_makenew {
 	background-color: #ccc;
 	border:none;
+}
+
+.goal_data {
+	margin: 10px;
+}
+
+.marg_top_10 {
+	margin-top: 10px;
+}
+
+.button {
+	font-size: 12px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	text-align: center;
+	padding: 3px 10px;
+	color: #555;
+
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f1f1f1), color-stop(51%,#e1e1e1), color-stop(100%,#f6f6f6));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+	background: -o-linear-gradient(top, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+	background: linear-gradient(to bottom, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+}
+
+.button:hover {
+	background: #f6f6f6;
+	background: -moz-linear-gradient(top, #f6f6f6 0%, #e1e1e1 49%, #f1f1f1 50%, #ffffff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(49%,#e1e1e1), color-stop(50%,#f1f1f1), color-stop(100%,#ffffff));
+	background: -webkit-linear-gradient(top, #f6f6f6 0%,#e1e1e1 49%,#f1f1f1 50%,#ffffff 100%);
+	background: -o-linear-gradient(top, #f6f6f6 0%,#e1e1e1 49%,#f1f1f1 50%,#ffffff 100%);
+	background: -ms-linear-gradient(top, #f6f6f6 0%,#e1e1e1 49%,#f1f1f1 50%,#ffffff 100%);
+	background: linear-gradient(to bottom, #f6f6f6 0%,#e1e1e1 49%,#f1f1f1 50%,#ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0 );
 }

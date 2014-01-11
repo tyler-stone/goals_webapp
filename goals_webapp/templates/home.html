@@ -47,7 +47,19 @@
 							<span><i>New Subgoal...</i></span>
 						</div>
 					</div>
-					<div class=""></div>
+					<div class="goal_data">
+						<p><b>Goal Type:</b> {{ x.goal_type.title }}</p>
+						<p><b>Status:</b> {{ x.status.title }}</p>
+						<p><b>Owner:</b> {{ x.owner.get_full_name }}</p>
+						<p class="marg_top_10"><b>Date Created:</b> {{ x.date_created }}</p>
+						<p><b>Last Update:</b> {{ x.last_update }}</p>
+						<p><b>Due Date:</b> {{ x.date_due }}</p>
+						<p class="marg_top_10"><b>Notes:</b><br /> {{ x.notes }}</p>
+						<div class="marg_top_10">
+						<a href="#"><div class="button">Edit</div></a>
+						<a href="#"><div class="button">Delete</div></a>
+						</div>
+					</div>
 				</div>
 				</div>
 			{% endfor %}

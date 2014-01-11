@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 class Goal(models.Model):
 	title = models.CharField(max_length=255)
@@ -43,3 +44,8 @@ class GoalType(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
+class GoalForm(ModelForm):
+	class Meta:
+		model=Goal
+		fields = ['title', 'notes', 'status', 'owner', 'date_due']
