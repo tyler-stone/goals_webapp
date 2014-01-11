@@ -18,7 +18,12 @@ def home(request):
 	num_today_goals = len(today_goals)
 
 	total_goals = num_inbox_goals + num_overdue_goals + num_today_goals
-	return render(request, 'home.html', {'user':user, 'total_goals':total_goals, 'inbox_goals':inbox_goals, 'num_inbox_goals':num_inbox_goals, 'overdue_goals':overdue_goals, 'num_overdue_goals':num_overdue_goals, 'today_goals':today_goals, 'num_today_goals':num_today_goals})
+	return render(request, 'home.html', {
+		'user':user, 
+		'total_goals':total_goals, 
+		'inbox_goals':inbox_goals,
+		'overdue_goals':overdue_goals, 
+		'today_goals':today_goals,})
 
 def redirect(request):
 	return HttpResponseRedirect('/goals/')

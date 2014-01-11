@@ -4,6 +4,7 @@
 <title>Home | O-Goals</title>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 {% load staticfiles %}
+{% load tags %}
 <link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
 </head>
 
@@ -20,25 +21,45 @@
 		</div>
 	</div>
 
-	{% if num_inbox_goals > 0 %}
+	{% with count=inbox_goals|count %}
+	{% if count > 0 %}
 		<div id="inbox" class="goal_section">
 			<h2>Inbox</h2>
-			<h3>({{ num_inbox_goals }})</h3>
+			<h3>({{ count }})</h3>
 			{% for x in inbox_goals %}
 				<div class="goal">
-				<div class="progressbar"><div class="inbox"></div></div>
-				<div class="goal_flag inbox"></div>
-				<span>{{ x.title }}</span>
-				<div class="progressbar"><div class="inbox"></div></div>
+				<div class="goal_minview">
+					<div class="progressbar"><div class="inbox"></div></div>
+					<div class="goal_flag inbox"></div>
+					<span>{{ x.title }}</span>
+					<div class="progressbar"><div class="inbox"></div></div>
+				</div>
+				<div class="goal_detailview">
+					<div class="subgoal_wrapper">
+					{% for y in x.subgoal_set.all %}
+						<div class="subgoal subgoal_status_{{ y.status }}">
+						<div class="goal_flag subgoal_status_{{ y.status }}"></div>
+							<span>{{ y.title }}</span>
+						</div>
+					{% endfor %}
+						<div class="subgoal subgoal_status_makenew">
+						<div class="goal_flag subgoal_status_makenew"></div>
+							<span><i>New Subgoal...</i></span>
+						</div>
+					</div>
+					<div class=""></div>
+				</div>
 				</div>
 			{% endfor %}
 		</div>
 	{% endif %}
+	{% endwith %}
 
-	{% if num_overdue_goals > 0 %}
+	{% with count=overdue_goals|count %}
+	{% if count > 0 %}
 		<div id="overdue" class="goal_section">
 			<h2>Overdue</h2>
-			<h3>({{ num_overdue_goals }})</h3>
+			<h3>({{ count }})</h3>
 			{% for x in overdue_goals %}
 				<div class="goal">
 				<div class="progressbar"><div class="overdue"></div></div>
@@ -49,11 +70,13 @@
 			{% endfor %}
 		</div>
 	{% endif %}
+	{% endwith %}
 
-	{% if num_today_goals > 0 %}
+	{% with count=today_goals|count %}
+	{% if count > 0 %}
 		<div id="today" class="goal_section">
 			<h2>Today</h2>
-			<h3>({{ num_today_goals }})</h3>
+			<h3>({{ count }})</h3>
 			{% for x in today_goals %}
 				<div class="goal">
 				<div class="goal_flag today"></div>
@@ -64,5 +87,6 @@
 			{% endfor %}
 		</div>
 	{% endif %}
+	{% endwith %}
 </body>
 </html>
