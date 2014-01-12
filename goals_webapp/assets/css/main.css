@@ -72,6 +72,10 @@ table {
 }
 
 #today {
+	color: orange;
+}
+
+#all_goals {
 	color: #333;
 }
 
@@ -88,6 +92,7 @@ table {
 }
 
 .goal_minview {
+	cursor: pointer;
 	border-right: 1px solid #ddd;
 	background: #ffffff;
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
@@ -126,14 +131,17 @@ table {
 	background-color: #cc0000;
 }
 
-.today {
+.due_today {
+	background-color: orange;
+}
+
+.none {
 	background-color: #333;
 }
 
 .goal span {
-	line-height: 30px;
-	height: 30px;
-	padding: 10px;
+	line-height: 29px;
+	padding: 0 10px;
 	font-weight: bold;
 	font-size: 14px;
 }
@@ -176,12 +184,12 @@ table {
 }
 
 .subgoal_status_None {
-	border: 1px solid #777;
-	color: #777;
+	border: 1px solid #333;
+	color: #333;
 }
 
 .goal_flag.subgoal_status_None {
-	background-color: #777;
+	background-color: #333;
 	border:none;
 }
 
@@ -224,6 +232,7 @@ table {
 	text-align: center;
 	padding: 3px 10px;
 	color: #555;
+	cursor: pointer;
 
 	background: #ffffff;
 	background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
@@ -248,7 +257,7 @@ table {
 
 .subgoal_text {
 	border: 0;
-	width: 837px;
+	width: 703px;
 	height: 100%;
 	font-weight: bold;
 	color: #ccc;
@@ -258,5 +267,4 @@ table {
 .minview_right {
 	float: right;
 	position: relative;
-	top: -10px;
 }

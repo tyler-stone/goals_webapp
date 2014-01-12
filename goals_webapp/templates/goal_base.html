@@ -1,0 +1,39 @@
+<div id="goal_{{ x.pk }}" class="goal">
+	<div class="goal_flag {{ x.color_class }}"></div>
+	<div class="goal_minview">
+		<div class="progressbar"><div class="{{ x.color_class }}"></div></div>
+		<span>{{ x.title }}</span>
+		<span class="minview_right">Due {{ x.date_due }}</span>
+		<div class="progressbar"><div class="{{ x.color_class }}"></div></div>
+	</div>
+	<div class="goal_detailview">
+		<div class="subgoal_wrapper">
+		{% for y in x.subgoal_set.all %}
+			<div class="subgoal subgoal_status_{{ y.status }}">
+			<div class="goal_flag subgoal_status_{{ y.status }}"></div>
+				<span>{{ y.title }}</span>
+			</div>
+		{% endfor %}
+			<div class="subgoal subgoal_status_makenew">
+			<div class="goal_flag subgoal_status_makenew"></div>
+				<span><input type="text" class="subgoal_text" onClick="this.select();" value="Type New Subgoal..."></span>
+			</div>
+		</div>
+		<div class="goal_data">
+			<table border="0">
+				<tr><td><b>Goal Type:</b></td><td> {{ x.goal_type.title }}</td></tr>
+				<tr><td><b>Status:</b></td><td> {{ x.status.title }}</td></tr>
+				<tr><td><b>Owner:</b></td><td> {{ x.owner.get_full_name }}</td></tr>
+				<tr><td class="pad_top_10"><b>Date Created:</b></td><td class="pad_top_10"> {{ x.date_created }}</td></tr>
+				<tr><td><b>Last Update:</b></td><td> {{ x.last_update }}</td></tr>
+				<tr><td><b>Due Date:</b></td><td> {{ x.date_due }}</td></tr>
+			</table>
+			<p class="marg_top_10"><b>Notes:</b><br /> {{ x.notes }}</p>
+			<div class="marg_top_10">
+				<div class="close button">Close</div>
+				<a href="#"><div class="button">Edit</div></a>
+				<a href="#"><div class="delete button delete">Delete</div></a>
+			</div>
+		</div>
+	</div>
+</div>
