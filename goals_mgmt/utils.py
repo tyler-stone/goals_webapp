@@ -13,4 +13,4 @@ def update_flags(request):
 		else:
 			x.flag = Flag.objects.get(title="None")
 		x.save()
-	return HttpResponseRedirect('/goals/')
+	return HttpResponseRedirect('/goals/home')
