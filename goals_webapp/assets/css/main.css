@@ -63,7 +63,15 @@ table {
 	color: #ccc;
 }
 
+#make_new:hover {
+	color: #333;
+}
+
 #inbox {
+	color: #4cc;
+}
+
+.goal_inbox {
 	color: #4cc;
 }
 
@@ -71,11 +79,31 @@ table {
 	color: #cc0000;
 }
 
+.goal_overdue {
+	color: #cc0000;
+}
+
 #today {
 	color: orange;
 }
 
+.goal_due_today {
+	color: orange;
+}
+
 #all_goals {
+	color: #333;
+}
+
+#complete {
+	color: #04ac00;
+}
+
+.goal_complete {
+	color: #04ac00;
+}
+
+.goal_none {
 	color: #333;
 }
 
@@ -85,9 +113,6 @@ table {
 
 .goal {
 	background-color: #f8f8f8;
-	/* border: 1px solid #ddd; */
-	/*height: 32px;*/
-	/* border-radius: 2px; */
 	margin-bottom: 5px;
 }
 
@@ -118,25 +143,80 @@ table {
 	position: relative;
 	float: left;
 }
+.right_bar {
+	width: 100px;
+	float: right;
+	position: relative;
+	height: 30px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+.right_bar span {
+	margin-left: 25px;
+	text-shadow: 1px 0px 2px #333;
+}
 
 .make_new {
 	background-color: #ccc;
 }
 
 .inbox {
+	background: url("/static/images/inbox_base.png");
 	background-color: #4cc;
 }
 
+.inbox.right_bar {
+	background: url("/static/images/inbox_bar.png");
+	border-right: 1px solid #00c8ca;
+}
+
 .overdue {
+	background: url("/static/images/overdue_base.png");
 	background-color: #cc0000;
 }
 
+.overdue.right_bar {
+	background: url("/static/images/overdue_bar.png");
+	border-right: 1px solid #cc0000;
+}
+
 .due_today {
+	background: url("/static/images/today_base.png");
 	background-color: orange;
 }
 
+.due_today.right_bar {
+	background: url("/static/images/today_bar.png");
+	border-right: 1px solid #ffc600;
+}
+
 .none {
+	background: url("/static/images/none_base.png");
 	background-color: #333;
+}
+
+.none.right_bar {
+	background: url("/static/images/none_bar.png");
+	border-right: 1px solid #333;
+}
+
+.complete {
+	background: url("/static/images/complete_base.png");
+	background-color: #04ac00;
+}
+
+.ico_complete {
+	width: 30px;
+	height: 30px;
+	background: url("/static/images/complete_ico.png");
+}
+
+.complete.right_bar {
+	background: url("/static/images/complete_bar.png");
+	border-right: 1px solid #04ac00;
 }
 
 .goal span {
@@ -266,5 +346,10 @@ table {
 
 .minview_right {
 	float: right;
-	position: relative;
+	width: 250px;
 }
+
+.goal_due_date {
+	float: left;
+}
+

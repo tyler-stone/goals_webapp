@@ -1,3 +1,4 @@
+from __future__ import division
 from django.db import models
 from django.contrib.auth.models import User
 from django.forms import ModelForm
@@ -48,7 +49,7 @@ class Goal(models.Model):
 			if x.status == "Complete":
 				totalDone += 1;
 		if total > 0:
-			return (totalDone / total) * 100
+			return round((totalDone / total) * 100, 1)
 		else:
 			return 0
 

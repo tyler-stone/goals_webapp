@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>Home | O-Goals</title>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+{% extends "base.html" %}
 {% load staticfiles %}
 {% load tags %}
-<link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-</head>
 
-<body>
-	<header>
-		<h1>{{ user }}</h1>
-		<span><a href="/logout/">logout</a></span>
-	</header>
+{% block title %}Home | O-Goals{% endblock %}
 
-	<div id="make_new" class="goal_section">
-		<div class="goal no_progressbar">
-		<div class="goal_flag make_new"></div>
-		<span><i>New Goal...</i></span>
+{% block content %}
+	<a href="/goals/new">
+		<div id="make_new" class="goal_section">
+			<div class="goal no_progressbar">
+			<div class="goal_flag make_new"></div>
+			<span><i>New Goal...</i></span>
+			</div>
 		</div>
-	</div>
+	</a>
 
 	{% with count=inbox_goals|count %}
 	{% if count > 0 %}
@@ -69,6 +61,18 @@
 		</div>
 	{% endif %}
 	{% endwith %}
-</body>
-<script src="{% static "js/goals.js" %}"></script>
-</html>
+
+	{% with count=complete_goals|count %}
+	{% if count > 0 %}
+		<div id="complete" class="goal_section">
+			<h2>Complete</h2>
+			<h3>({{ count }})</h3>
+			{% for x in complete_goals %}
+				{% include "goal_base.html" %}
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% endwith %}
+{% endblock %}
+
+{% block scripts %} <script src="{% static "js/goals.js" %}"></script> {% endblock %}

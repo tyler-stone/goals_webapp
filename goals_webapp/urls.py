@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^login/$', 'auth.views.login_user'),
     url(r'^goals/update', 'goals_mgmt.utils.update_flags'),
     url(r'^goals/home', 'goals_mgmt.views.home'),
+    url(r'^goals/new', 'goals_mgmt.views.new'),
     url(r'^$', 'goals_mgmt.views.redirect'),
 )

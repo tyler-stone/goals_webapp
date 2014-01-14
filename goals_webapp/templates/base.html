@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>{% block title %} O-Goals {% endblock %}</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+{% load staticfiles %}
+{% load tags %}
+<link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>{{ user }}</h1>
+		<span><a href="/logout/">logout</a></span>
+	</header>
+
+	{% block content %}{% endblock %}
+</body>
+{% block scripts %}{% endblock %}
+</html>
